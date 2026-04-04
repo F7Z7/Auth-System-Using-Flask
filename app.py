@@ -11,7 +11,7 @@ def home():
 
 @app.route("/login",methods=["POST"])
 def login():
-    role=request.form.get("role")
+    role=request.form.get("selection")
     username=request.form.get("username")
     password=request.form.get("password")
 
