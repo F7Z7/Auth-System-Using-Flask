@@ -8,8 +8,8 @@ app=Flask(__name__)
 def home():
     return render_template("login.html")
 
-@app.route("/login",methods=["POST"])
-def login():
+@app.route("/register",methods=["POST"])
+def register():
     role=request.form.get("selection")
     username=request.form.get("username")
     password=request.form.get("password")
