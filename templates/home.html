@@ -2,20 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="static/home.css">
+    <title>Auth System</title>
+    <link rel="stylesheet" href="../static/home.css">
 </head>
 <body>
-<div>
-    <h1>Welcome to this auth system</h1>
-    <h2>Are you a new user </h2>
-    <a href="register.html">
-    <button >Sign up</button>
-    </a>
-     <h2>All ready have an account </h2>
-    <a href="login.html">
-    <button >login in</button>
-    </a>
+
+<div class="container">
+    <h1>Authentication System</h1>
+    <p class="subtitle">Secure login and registration portal</p>
+
+    <div class="card">
+        <h2>New here?</h2>
+        <p>Create an account to get started</p>
+        <a href="/register">
+            <button class="btn primary">Sign Up</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Already have an account?</h2>
+        <p>Login to continue</p>
+        <a href="/login">
+            <button class="btn secondary">Login</button>
+        </a>
+    </div>
 </div>
+
 </body>
 </html>
