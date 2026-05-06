@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, jsonify
+from flask import Flask, request, render_template, redirect, jsonify, url_for
 from db import get_db_connection
 from auth import check_password_hash,generate_password_hash
 
@@ -26,7 +26,7 @@ def register():
         conn.commit()
         conn.close()
 
-        return "User registered successfully"
+        return redirect(url_for("/login"))
     return render_template("register.html")
 if __name__ == '__main__':
     app.run(debug=True)
