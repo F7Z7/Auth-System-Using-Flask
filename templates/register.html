@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Create Account</h2>
+
+        <form method="POST" action="/register">
+
+            <label>Select role:</label><br>
+            <input type="radio" name="selection" value="admin" required> Admin
+            <input type="radio" name="selection" value="user" required> User
+
+            <br><br>
+
+            <label>Username:</label><br>
+            <input type="text" name="username" required><br><br>
+
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br><br>
+
+            <button class="btn primary" type="submit">Sign Up</button>
+
+        </form>
+
+        <br>
+        <p>Already have an account?</p>
+        <a href="/login">
+            <button class="btn secondary">Login</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
