@@ -1,0 +1,105 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #68e7ff, #c9f7ff);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Heading */
+.card h2 {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #007BFF;
+}
+
+/* Radio buttons */
+.radio-group {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+
+    border-radius: 6px;
+    border: 2px solid transparent;
+    font-size: 16px;
+    cursor: pointer;
+
+    background: #007BFF;
+    color: white;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover → ghost style */
+.btn:hover {
+    background: transparent;
+    border-color: #007BFF;
+    color: #000;
+}
+
+/* Bottom text */
+.switch {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.switch a {
+    color: #007BFF;
+    text-decoration: none;
+}
