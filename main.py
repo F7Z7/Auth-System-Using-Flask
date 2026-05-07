@@ -42,6 +42,17 @@ def login_user():
 
     user = check_user(username)
 
+    if user:
+        hash_pass=user["password"]
+
+        if check_password_hash(hash_pass, password):
+            return render_template("welcome.html", user=username)
+
+        else:
+            return "Wrong password"
+
+    else:
+        return "User does not exist"
 
 
 def check_user(username,password):
@@ -51,19 +62,7 @@ def check_user(username,password):
 
 
     user=result.fetchone()
-    if user:
-        hash_pass=user["password"]
 
-        res=check_password_hash(hash_pass,password)
-
-        if res:
-            return render_template("welcome.html")
-
-        else:
-            return 404
-
-    else:
-        return False
 
 
     conn.close()
