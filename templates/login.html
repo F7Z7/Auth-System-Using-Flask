@@ -7,22 +7,25 @@
 
 </head>
 <body>
-<div>
-    <form method="POST" action="/login">
-        <label>Select an option:</label>
-        <input type="radio" name="selection" value="admin"> Admin
-        <input type="radio" name="selection" value="user"> User
+<div class="container">
 
-        <br><br>
+    <div class="card">
+        <form method="POST" action="/login">
+            <label>Select an option:</label>
+            <input type="radio" name="selection" value="admin"> Admin
+            <input type="radio" name="selection" value="user"> User
 
-        <label>Username:</label>
-        <input type="text" name="username"><br><br>
+            <br><br>
 
-        <label>Password:</label>
-        <input type="password" name="password"><br><br>
+            <label>Username:</label>
+            <input type="text" name="username"><br><br>
 
-        <input type="submit" value="Login">
-    </form>
+            <label>Password:</label>
+            <input type="password" name="password"><br><br>
+
+            <input type="submit" class="btn" value="Login">
+        </form>
+    </div>
 </div>
 </body>
 </html>
