@@ -1,105 +1,159 @@
-/* Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Body */
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #68e7ff, #c9f7ff);
-    height: 100vh;
+/* BODY */
+body{
+    font-family:Arial, sans-serif;
+    height:100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#68e7ff,#c9f7ff);
 }
 
-/* Main container */
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+/* CONTAINER */
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
 }
 
-/* Card */
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    width: 300px;
+/* CARD */
+.card{
+    width:350px;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    text-align: center;
+    background:white;
+
+    padding:35px 30px;
+
+    border-radius:14px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
 }
 
-/* Heading */
-.card h2 {
-    margin-bottom: 20px;
+/* TITLE */
+.card h2{
+    text-align:center;
+    margin-bottom:25px;
+
+    color:#222;
 }
 
-/* Labels */
-label {
-    display: block;
-    text-align: left;
-    margin-top: 10px;
-    font-size: 14px;
+/* LABELS */
+label{
+    display:block;
+
+    margin-bottom:6px;
+    margin-top:14px;
+
+    font-size:14px;
+    font-weight:600;
+
+    color:#333;
 }
 
-/* Inputs */
+/* INPUTS */
 input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+input[type="password"]{
 
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+    border-radius:8px;
+
+    outline:none;
+
+    transition:0.3s;
 }
 
-input:focus {
-    border-color: #007BFF;
+/* INPUT FOCUS */
+input[type="text"]:focus,
+input[type="password"]:focus{
+    border-color:#007BFF;
+    box-shadow:0 0 5px rgba(0,123,255,0.3);
 }
 
-/* Radio buttons */
-.radio-group {
-    text-align: left;
-    margin-top: 10px;
+/* RADIO GROUP */
+.radio-group{
+    margin-top:10px;
+    margin-bottom:10px;
+
+    display:flex;
+    gap:20px;
+
+    align-items:center;
 }
 
-/* Button */
-.btn {
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-
-    border-radius: 6px;
-    border: 2px solid transparent;
-    font-size: 16px;
-    cursor: pointer;
-
-    background: #007BFF;
-    color: white;
-
-    transition: all 0.3s ease;
+/* RADIO LABEL INLINE */
+.radio-group label{
+    margin:0;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-weight:normal;
 }
 
-/* Hover → ghost style */
-.btn:hover {
-    background: transparent;
-    border-color: #007BFF;
-    color: #000;
+/* BUTTON */
+.btn{
+    width:100%;
+
+    margin-top:25px;
+
+    padding:12px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#007BFF;
+    color:white;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
 }
 
-/* Bottom text */
-.switch {
-    margin-top: 15px;
-    font-size: 14px;
+/* BUTTON HOVER */
+.btn:hover{
+    background:#005fd1;
 }
 
-.switch a {
-    color: #007BFF;
-    text-decoration: none;
+/* SECONDARY BUTTON */
+.secondary{
+    background:#e9ecef;
+    color:#222;
+}
+
+.secondary:hover{
+    background:#d6dbe1;
+}
+
+/* BOTTOM TEXT */
+.switch{
+    text-align:center;
+    margin-top:18px;
+
+    font-size:14px;
+}
+
+.switch a{
+    text-decoration:none;
+    color:#007BFF;
+    font-weight:bold;
+}
+
+.switch a:hover{
+    text-decoration:underline;
 }
