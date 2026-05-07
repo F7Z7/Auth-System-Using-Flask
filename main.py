@@ -55,18 +55,17 @@ def login_user():
         return "User does not exist"
 
 
-def check_user(username,password):
+def check_user(username):
     conn=get_db_connection()
 
-    result=conn.execute("SELECT * FROM users WHERE username = ?", (username,))
+    result=conn.execute("SELECT * FROM users WHERE username = ?", (username,)) #the comma indicates it is a value not tuple
 
 
     user=result.fetchone()
 
-
-
     conn.close()
 
+    return user
 
 if __name__ == '__main__':
     app.run(debug=True)
