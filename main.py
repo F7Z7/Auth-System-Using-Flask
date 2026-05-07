@@ -1,26 +1,29 @@
-from flask import Flask, request, render_template, redirect, jsonify, url_for
-from db import get_db_connection
-from auth import check_password_hash,generate_password_hash
+from flask import Flask, request, render_template, redirect, url_for
 
-app=Flask(__name__)
+from auth import generate_password_hash
+from db import get_db_connection
+
+app = Flask(__name__)
+
 
 @app.route("/")
 def home():
     return render_template("home.html")
 
-@app.route("/register",methods=["GET","POST"])
-def register():
-    if request.method=="POST":
-        role=request.form.get("selection")
-        username=request.form.get("username")
-        password=request.form.get("password")
 
-        hashed_password=generate_password_hash(password)
-        conn=get_db_connection()
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        role = request.form.get("selection")
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        hashed_password = generate_password_hash(password)
+        conn = get_db_connection()
 
         conn.execute(
-        "INSERT INTO users (username, password, role) VALUES (?, ?, ?)",
-        (username, hashed_password, role)
+            "INSERT INTO users (username, password, role) VALUES (?, ?, ?)",
+            (username, hashed_password, role)
         )
 
         conn.commit()
@@ -28,5 +31,7 @@ def register():
 
         return redirect(url_for("/login"))
     return render_template("register.html")
+
+
 if __name__ == '__main__':
     app.run(debug=True)
