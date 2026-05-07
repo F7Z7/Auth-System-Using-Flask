@@ -34,11 +34,14 @@ def register():
 
 @app.route("/login",methods=["GET","POST"])
 def login_user():
-    role = request.form.get("selection")
+    if request.method == "GET":
+        return render_template("login.html")
+
     username = request.form.get("username")
     password = request.form.get("password")
 
-    check_user(username,password)
+    user = check_user(username)
+
 
 
 def check_user(username,password):
@@ -56,9 +59,14 @@ def check_user(username,password):
         if res:
             return render_template("welcome.html")
 
+        else:
+            return 404
+
     else:
         return False
 
+    conn.commit()
+    conn.close()
 
 
 if __name__ == '__main__':
