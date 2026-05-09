@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Welcome — Flask Auth</title>
+    <link rel="stylesheet" href="../static/welcome.css">
+</head>
+<body>
+<div class="card">
+    <h1>Welcome</h1>
+    <p>Welcome to the authentication system made using Flask.</p>
+    {% if user %}
+    <p class="small">Signed in as {{ user }}</p>
+    <a href="/home">Sign out</a>
+    {% endif %}
+</div>
+</body>
+</html>
