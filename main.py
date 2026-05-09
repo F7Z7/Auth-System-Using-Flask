@@ -1,11 +1,11 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for,session
 
 from auth import generate_password_hash,check_password_hash
 from db import get_db_connection
 
 app = Flask(__name__)
 
-
+app.secret_key="#011911"
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -46,13 +46,23 @@ def login_user():
         hash_pass=user["password"]
 
         if check_password_hash(hash_pass, password):
-            return render_template("welcome.html", user=username)
+            session['user'] = user["username"]
+
+            return redirect(url_for('welcome'))
 
         else:
             return "Wrong password"
 
     else:
         return "User does not exist"
+
+@app.route('/welcome')
+def welcome():
+    user = session.get("user")
+
+    return render_template("welcome.html", user=user)
+
+
 
 
 def check_user(username):
