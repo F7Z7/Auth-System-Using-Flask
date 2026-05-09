@@ -62,7 +62,9 @@ def welcome():
 
     return render_template("welcome.html", user=user)
 
-
+@app.route('/logout')
+def logout():
+    return render_template("home.html")
 
 
 def check_user(username):
